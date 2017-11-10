@@ -20,6 +20,7 @@ public:
 	void clear();
 	const unsigned int& size() const;
 
+	const T& get(unsigned int p_index);
 	const T& operator[](unsigned int p_index);
 
 private:
@@ -104,6 +105,17 @@ const unsigned int& LinkedList<T>::size() const
 
 template <class T>
 const T& LinkedList<T>::operator[](unsigned int p_index)
+{
+	LinkedListNode<T>* current = __head;
+
+	while (p_index--)
+		current = current->m_next;
+
+	return current->m_value;
+}
+
+template <class T>
+const T& LinkedList<T>::get(unsigned int p_index)
 {
 	LinkedListNode<T>* current = __head;
 

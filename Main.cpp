@@ -12,6 +12,7 @@ int main()
 	list.remove(1);
 
 	std::cout << list[1] << std::endl;
+	std::cout << list.get(1) << std::endl;
 	std::cout << list.size() << std::endl;
 	
 	return 0;
